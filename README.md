@@ -53,7 +53,7 @@ python stock_prediction_lstm.py
 - matplotlib
 - yfinance
 - scikit-learn
-- tensorflow
+- PyTorch
 
 For a complete list of dependencies, refer to `requirements.txt`.
 
@@ -99,4 +99,4 @@ Eakansh - [GitHub Profile](https://github.com/eaclix)
 
 ## 🔍 Keywords
 
-Stock Prediction, LSTM, Deep Learning, Time Series Analysis, Financial Forecasting, TensorFlow, Python, Data Science, Machine Learning, Algorithmic Trading
+Stock Prediction, LSTM, Deep Learning, Time Series Analysis, Financial Forecasting, PyTorch, Python, Data Science, Machine Learning, Algorithmic Trading
