@@ -1,1 +1,4 @@
-model.save('model/lstm_model.h5')
+import torch
+
+# Assuming `model` is your trained LSTM model
+torch.save(model.state_dict(), 'model/lstm_model.pth')
