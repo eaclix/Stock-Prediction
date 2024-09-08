@@ -3,18 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Price Prediction</title>
+    <title>Stock Price Prediction Model</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Predict Stock Prices</h1>
-    <form action="/" method="POST">
-        <label for="stock_symbol">Enter Stock Symbol (e.g., AMZN):</label>
-        <input type="text" id="stock_symbol" name="stock_symbol" required>
-        <button type="submit">Predict</button>
-    </form>
+    <header>
+        <h1>STOCK Prediction Model</h1>
+    </header>
 
-    {% if predicted_price %}
-    <h2>Predicted Stock Price for {{ stock_symbol }}: {{ predicted_price }}</h2>
-    {% endif %}
+    <div class="container">
+        <form id="stock-form">
+            <label for="stock_symbol">Enter Stock Symbol (e.g., AMZN):</label>
+            <input type="text" id="stock_symbol" name="stock_symbol" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        <div id="output" class="hidden">
+            <h2>Predicted Stock Price for <span id="stock-symbol-display"></span>: <span id="predicted-price"></span></h2>
+            <div class="chart-container">
+                <div>
+                    <h3>Predicted Prices</h3>
+                    <canvas id="stock-price-chart"></canvas>
+                </div>
+                <div>
+                    <h3>Historical Prices</h3>
+                    <canvas id="historical-chart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-message" class="error hidden"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>
